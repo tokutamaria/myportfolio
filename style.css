@@ -229,7 +229,7 @@ header h1 a {
 	padding: 4rem 1rem;
 	z-index: 1;
 	/* background: yellowgreen; */
-	justify-content: center;
+	justify-content: space-around;
 }
 
 .about .profile_image {
@@ -237,18 +237,20 @@ header h1 a {
 }
 
 .about img {
-	width: 200px;
-	height: 300px;
-	box-shadow: 0 0 20px #fff;
+	width: 70%;
+	height: auto;
+	box-shadow: 0 0 20px #13363E;
+	border-radius: 50%;
 	margin:0 auto;
 }
 
-.profile_name p {
+.about .profile_name  {
 	width: 70%;
 	margin: 2rem auto;
 	text-align: center;
 	font-size: 2rem;
-	border-bottom: 1px solid #333;
+	border-bottom: 1px solid #333333;
+	text-shadow: 3px 3px 2px #fff;
 }
 
 .about .profile_text {
