@@ -34,8 +34,8 @@ body {
 	letter-spacing: .05em;
 	font-family: adobe-caslon-pro, 'Noto Sans JP', "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 	width:100%;
-    position:relative;
-    color: #333;
+  position:relative;
+  color: #333333;
 }
 
 article,aside,details,figcaption,figure,
@@ -111,7 +111,6 @@ html {
 
 .front_text{
   position: relative;
-  margin: 50px;
   font-weight: 300;
   font-size: 30px;
 	letter-spacing: 10px;
@@ -142,15 +141,56 @@ html {
   height: 1px;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  background-color: black;
+  background-color: #333333;
   border-radius: 2px;
 }
 
 /* ヘッダー */
+.header {
+	position: fixed;
+	left: 0;
+	/* top: -100px; */
+	width: 100%;
+	height: 80px;
+	z-index: 100;
+	background:#E5E5E5;
+	opacity: .9;
+	padding: 0 48px;
+	transition: transform .5s;
+	box-shadow: 0 2px 5px #13363E;
+}
+
+.header .inner {
+	width: 100%;
+	height: 80px;
+	align-items: center;
+}
 
 /* ヘッダータイトル */
+header h1 a {
+	color: #333333;
+	font-size: 1.5rem;
+	font-family: adobe-caslon-pro, serif;
+	transition: all .3s;
+	text-shadow: 3px 3px 2px #fff;
+}
 
 /* ハンバーガーメニュー */
+.header .inner ul {
+	flex-wrap: wrap;
+	/* justify-content: flex-end; */
+}
+
+.header .inner ul li {
+	padding: .5rem 4rem;
+}
+
+.header .inner .header_nav ul li a {
+	display: block;
+	position: relative;
+	color: #333333;
+	font-weight: bold;
+}
 
 /* キービジュアル */
 .key_visual {
@@ -161,7 +201,67 @@ html {
 	background-repeat: no-repeat;
 	background-position: center center;
 }
+
+.kv_inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.kv_inner .kv_text{
+	position: absolute;
+	top: 60%;
+	right: 10%;
+	font-size: 2.5rem;
+	letter-spacing: .5rem;
+	transform: translateY(-50%);
+}
 /* 自己紹介 */
+.about {
+	width: 100%;
+	height: auto;
+	position: relative;
+	padding: 4rem 0;
+}
+
+.about .profile {
+	flex-wrap: wrap;
+	padding: 4rem 1rem;
+	z-index: 1;
+	/* background: yellowgreen; */
+	justify-content: center;
+}
+
+.about .profile_image {
+	width: 30%;
+}
+
+.about img {
+	width: 200px;
+	height: 300px;
+	box-shadow: 0 0 20px #fff;
+	margin:0 auto;
+}
+
+.profile_name p {
+	width: 70%;
+	margin: 2rem auto;
+	text-align: center;
+	font-size: 2rem;
+	border-bottom: 1px solid #333;
+}
+
+.about .profile_text {
+	width: 30%;
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: 0 0 5px #DFE6F3;
+	border-radius: 10px;
+	/* padding: 20px; */
+}
+
+.about .profile_detail p {
+	padding-bottom: 1rem;
+}
 
 /* スキル */
 .skills {
