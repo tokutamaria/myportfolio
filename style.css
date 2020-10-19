@@ -95,6 +95,10 @@ img {
   display: flex;
 }
 
+.around {
+	justify-content: space-around;
+}
+
 .space {
   justify-content: space-between;
 }
@@ -105,8 +109,9 @@ html {
 }
 
 .wrapper {
-	max-width: 1400px;
+	max-width: 1200px;
 	margin: 0 auto;
+	background:orange;
 }
 
 .front_text{
@@ -220,8 +225,7 @@ header h1 a {
 .about {
 	width: 100%;
 	height: auto;
-	position: relative;
-	padding: 4rem 0;
+	padding: 8rem 0;
 }
 
 .about .profile {
@@ -229,7 +233,6 @@ header h1 a {
 	padding: 4rem 1rem;
 	z-index: 1;
 	/* background: yellowgreen; */
-	justify-content: space-around;
 }
 
 .about .profile_image {
@@ -254,37 +257,36 @@ header h1 a {
 }
 
 .about .profile_text {
-	width: 30%;
-	background-color: rgba(255,255,255,0.5);
-	box-shadow: 0 0 5px #DFE6F3;
+	width: 50%;
+	background: #ffffff;
+	box-shadow: 0 0 4px #13363E;
 	border-radius: 10px;
-	/* padding: 20px; */
+	padding: 30px;
 }
 
-.about .profile_detail p {
-	padding-bottom: 1rem;
+.about .profile_text p {
+	padding-bottom: 1.5rem;
 }
-
 /* スキル */
 .skills {
 	width: 100%;
 	height: auto;
 	background-color:#779BBD;
 	color: #fff;
-	padding-top: 4px;
+	padding: 6rem;
+
 }
 
 .skills ul {
 	flex-wrap: wrap;
 	align-items: center;
+	padding-top: 2rem;
 }
 
 .skills ul li {
 	width: calc(100%/3);
-	margin-bottom: 80px;
 	text-align: center;
-	padding: 15px;
-
+	padding: 1rem;
 }
 
 .skills .skill_img {
@@ -298,7 +300,42 @@ header h1 a {
 }
 
 /* 仕事 */
+.work {
+	width: 100%;
+	height: auto;
+	position: relative;
+	padding: 8rem 0;
+}
 
+.wrapper .work_contents {
+	width: 100%;
+	padding: 0 50px;
+	margin: 0 auto;
+	/* background: red; */
+}
+
+.work_content {
+	width: 100%;
+	margin: 50px 0 100px;
+}
+
+.work .work_content:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.work_img {
+	width: calc(70% - 10px);
+}
+
+.work .work_info {
+	text-align: center;
+	margin: 3rem 0;
+}
+
+.work p,
+.work h3 {
+	text-align: center;
+}
 /* お問い合わせ */
 
 /* フッター */
