@@ -356,39 +356,37 @@ header h1 a {
 .contact {
 	width: 100%;
 	height: auto;
-	padding: 50px 100px 100px 0;
+	padding: 140px 0;
 	margin: 0 auto;
-	background-image: url(/images/シティ.jpg);
+	background-image:url(/images/シティ.jpg);
 	background-size:  cover;
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	text-align: center;
 	max-width: none;
-	/* filter: grayscale(80%); */
-}
-
-.contact h3 {
-	text-shadow: 5px 5px 5px #fff;
-	margin-bottom: .5rem;
 }
 
 .contact p {
-	padding: 4rem 0;
-	font-size: 1.5rem;
+	padding: 3rem 0;
+	font-size: 1rem;
+	font-weight: bold;
 }
+
 form {
 	display: block;
 }
 
 .contact input,
 .contact textarea {
-	width: 600px;
+	width: 60%;
 	padding: 10px;
-	box-shadow: 0 5px 12px rgba(128,128,128,.141176);
 	border-radius: 10px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 1.5rem;
 }
 
-.contact-name {
+/* .contact-name {
 	margin: 1rem 2rem;
 }
 
@@ -398,20 +396,19 @@ form {
 
 .contact-message {
 	margin: 1rem 2rem;
-}
+} */
 
 .contact textarea {
 	height: 200px;
+	border: solid 2px #333333;
 }
 
 button {
-  background-color: #FFF;
+  background-color: #ffffff;
   color: #333;
-  font-family: 'sans serif';
-  outline: none;
-  border: none;
+	outline: none;
+	border: solid 2px #333333;
 	border-radius: 5px;
-	border: 1px solid;
   padding: 10px 0;
   display: block;
   font-size: 1rem;
@@ -424,8 +421,10 @@ button {
 
 button:hover {
 	color: #fff;
-	background-color: #333;
-	transition: .3s;
+	background-color: rgb(3, 7, 70);
+	border: solid 2px #ffffff;
+	opacity: .8;
+	transition: .5s;
 }
 /* フッター */
 
