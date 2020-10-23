@@ -154,10 +154,10 @@ html {
 .header {
 	position: fixed;
 	left: 0;
-	/* top: -100px; */
+	top: -100px;
 	width: 100%;
 	height: 80px;
-	z-index: 100;
+	z-index: 1;
 	background:#E5E5E5;
 	opacity: .9;
 	padding: 0 48px;
@@ -174,20 +174,14 @@ html {
 /* ヘッダータイトル */
 header h1 a {
 	color: #333333;
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 	font-family: adobe-caslon-pro, serif;
 	transition: all .3s;
-	text-shadow: 3px 3px 2px #fff;
+	text-shadow: 3px 3px 2px #ffffff;
 }
-
-/* ハンバーガーメニュー */
-.header .inner ul {
-	flex-wrap: wrap;
-	/* justify-content: flex-end; */
-}
-
+/* ヘッダーナビゲーション */
 .header .inner ul li {
-	padding: .5rem 3rem;
+	padding: .5rem 2.5rem;
 }
 
 .header .inner .header_nav ul li a {
@@ -196,18 +190,8 @@ header h1 a {
 	color: #333333;
 	font-weight: bold;
 }
-
+/* ハンバーガーメニュー */
 .accordion_open {
-	margin-left: auto;
-}
-
-.accordion_open #open {
-	font-size: 2rem;
-	line-height: 64px;
-	cursor: pointer;
-}
-
-.accordion_open #open.hide {
 	display: none;
 }
 
@@ -224,43 +208,8 @@ header h1 a {
   transition: opacity 0.6s;
 }
 
-.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.accordion_content #close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 32px;
-  cursor: pointer;
-}
-
-.accordion_content li {
-  margin-top: 24px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.accordion_content.show li {
-  opacity: 1;
-  transform: none;
-}
-
-.accordion_content.show li:nth-child(1) {
-  transition-delay: 0.1s;
-}
-.accordion_content.show li:nth-child(2) {
-  transition-delay: 0.2s;
-}
-.accordion_content.show li:nth-child(3) {
-  transition-delay: 0.3s;
-}
-
-.header_nav {
-  display: none;
+.accordion_content ul li {
+	margin-top: 4rem;
 }
 
 /* キービジュアル */
@@ -281,11 +230,10 @@ header h1 a {
 
 .kv_inner .kv_text{
 	position: absolute;
-	top: 60%;
+	top: 65%;
 	right: 10%;
 	font-size: 2.5rem;
 	letter-spacing: .5rem;
-	transform: translateY(-50%);
 }
 /* 自己紹介 */
 .about {
@@ -314,7 +262,7 @@ header h1 a {
 }
 
 .about .profile_name  {
-	width: 70%;
+	width: 100%;
 	margin: 2rem auto;
 	text-align: center;
 	font-size: 2rem;
@@ -490,33 +438,111 @@ button:hover {
 /* トップに移動 */
 
 /*----------レスポンシブ----------*/
+@media (max-width: 768px) {
+/* ヘッダー */
+	.header_nav {
+  display: none;
+}
 
+.accordion_open {
+	display: block;
+	margin-left: auto;
+}
 
-@media (min-width: 600px) {
-  .pc-menu {
-    display: block;
-    margin-left: auto;
-  }
+.accordion_open #open.hide {
+	display: none;
+}
 
-  .pc-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-  .pc-menu a {
-    display: block;
-    width: 80px;
-    line-height: 64px;
-    text-align: center;
-  }
+.accordion_open #open,
+.accordion_content #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 2rem;
+	cursor: pointer;
+}
 
-  .pc-menu a:hover {
-    background: #f2f2f2;
-  }
+.accordion_content li {
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s, transform 0.3s;
+}
 
-  .sp-menu {
-    display: none;
-  }
+.accordion_content.show li {
+  opacity: 1;
+  transform: none;
+}
+
+.accordion_content.show li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.accordion_content.show li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.accordion_content.show li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.accordion_content.show li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* キービジュアル */
+.kv_inner .kv_text {
+	color: #ffffff;
+	}
+
+/* 自己紹介 */
+.about .profile {
+	display: block;
+}
+
+.about .profile_image {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.about .profile_name {
+	width: 100%;
+}
+
+.about .profile_text {
+	width: 90%;
+	margin: 0 auto;
+}
+
+/* スキル */
+.skills {
+		padding: 50px;
+	}
+	.skills ul li {
+		width: 50%;
+	}
+
+/* 仕事 */
+.work {
+	padding: 0 2rem;
+}
+
+.work_contents .work_content {
+	display: block;
+}
+
+.work_contents .work_text {
+	width: 100%;
+}
+
+/* お問い合わせ */
+.contact {
+	padding: 3rem;
+}
+.contact input,
+.contact textarea {
+	width: 100%;
+}
 }
