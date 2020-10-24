@@ -1,13 +1,12 @@
 "use strict"
 {
   const open = document.getElementById('open');
-  const close = document.getElementById('close');
   const overlay = document.querySelector('.accordion_content');
   const nav = document.getElementById('sp_nav');
 
   open.addEventListener('click', () => {
-    overlay.classList.add('show');
-    open.classList.add('hide');
+    overlay.classList.toggle('show');
+    open.classList.toggle('active');
   });
 
   close.addEventListener('click', () => {

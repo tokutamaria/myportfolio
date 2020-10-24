@@ -154,7 +154,7 @@ html {
 .header {
 	position: fixed;
 	left: 0;
-	top: -100px;
+	/* top: -100px; */
 	width: 100%;
 	height: 80px;
 	z-index: 1;
@@ -189,12 +189,12 @@ header h1 a {
 	position: relative;
 	color: #333333;
 	font-weight: bold;
+		-webkit-transition: -webkit-transform .4s ease;
+  transition: -webkit-transform .4s ease;
+  transition: transform .4s ease;
+  transition: transform .4s ease, -webkit-transform .4s ease;
 }
 /* ハンバーガーメニュー */
-.accordion_open {
-	display: none;
-}
-
 .accordion_content {
 	position: fixed;
   top: 0;
@@ -402,7 +402,7 @@ header h1 a {
 	border: solid 2px #333333;
 }
 
-button {
+.contact_btn {
   background-color: #ffffff;
   color: #333333;
 	outline: none;
@@ -444,12 +444,59 @@ button:hover {
   display: none;
 }
 
-.accordion_open {
+/* ハンバーガーメニュー */
+.accordion_open,
+.accordion_open span {
 	display: block;
-	margin-left: auto;
+	transition: all .5s;
+	box-sizing: border-box;
 }
 
-.accordion_open #open.hide {
+.accordion_open {
+	position: relative;
+	width: 40px;
+	height:44px;
+}
+.accordion_open span {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: #333333;
+	border-radius: 4px;
+}
+
+.accordion_open span:nth-of-type(1) {
+  top: 0;
+}
+.accordion_open span:nth-of-type(2) {
+  top: 20px;
+}
+.accordion_open span:nth-of-type(3) {
+  bottom: 0;
+}
+
+
+.accordion_open.active span:nth-of-type(1) {
+  -webkit-transform: translateY(20px) rotate(-315deg);
+	transform: translateY(20px) rotate(-315deg);
+	z-index: 1;
+}
+.accordion_open.active span:nth-of-type(2) {
+	opacity: 0;
+	z-index: 1;
+}
+.accordion_open.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-20px) rotate(315deg);
+	transform: translateY(-20px) rotate(315deg);
+	z-index: 1;
+}
+
+.header a.active {
+	width: 40px;
+	height: 44px;
+}
+.accordion_open#open.hide {
 	display: none;
 }
 
@@ -458,13 +505,8 @@ button:hover {
   pointer-events: auto;
 }
 
-.accordion_open #open,
-.accordion_content #close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 2rem;
-	cursor: pointer;
+.close {
+	opacity: 1;
 }
 
 .accordion_content li {
@@ -518,7 +560,7 @@ button:hover {
 
 /* スキル */
 .skills {
-		padding: 50px;
+		padding: 100px 50px;
 	}
 	.skills ul li {
 		width: 50%;
@@ -526,7 +568,7 @@ button:hover {
 
 /* 仕事 */
 .work {
-	padding: 0 2rem;
+	padding: 100px 50px;
 }
 
 .work_contents .work_content {
@@ -539,7 +581,7 @@ button:hover {
 
 /* お問い合わせ */
 .contact {
-	padding: 3rem;
+	padding: 100px 3rem;
 }
 .contact input,
 .contact textarea {
