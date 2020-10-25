@@ -9,14 +9,8 @@
     open.classList.toggle('active');
   });
 
-  close.addEventListener('click', () => {
-    overlay.classList.remove('show');
-    open.classList.remove('hide');
-  })
-
   nav.addEventListener('click', () => {
     overlay.classList.remove('show');
-    open.classList.remove('hide');
-  })
+  });
 
 }
