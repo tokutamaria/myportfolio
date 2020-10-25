@@ -205,7 +205,14 @@ header h1 a {
   transition: opacity 0.6s;
 }
 
+#sp_nav {
+	display: inline-block;
+	width: 0;
+	height: 0;
+}
+
 .accordion_content li {
+	display: block;
   opacity: 0;
   transform: translateY(30px);
 	transition: opacity 0.3s, transform 0.3s;
