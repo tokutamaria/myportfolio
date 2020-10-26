@@ -27,6 +27,7 @@ time, mark, audio, video {
 	font-size:100%;
 	vertical-align:baseline;
 	background:transparent;
+	user-select: none;
 }
 
 body {
@@ -211,6 +212,9 @@ header h1 a {
 	height: 0;
 }
 
+#sp_nav a {
+	color: #333333;
+}
 .accordion_content li {
 	display: block;
   opacity: 0;
@@ -277,7 +281,14 @@ header h1 a {
 	z-index: 1;
 }
 
-.about .profile_image {
+
+.about .profile_image.left {
+	width: 30%;
+	transition: transform 2s;
+	transform: translateX(800px);
+}
+
+.about .profile_image{
 	width: 30%;
 }
 
@@ -297,6 +308,7 @@ header h1 a {
 	border-bottom: 1px solid #333333;
 	text-shadow: 3px 3px 2px #fff;
 }
+
 
 .about .profile_text {
 	width: 50%;
