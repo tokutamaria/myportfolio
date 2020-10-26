@@ -281,16 +281,19 @@ header h1 a {
 	z-index: 1;
 }
 
-
-.about .profile_image.left {
-	width: 30%;
-	transition: transform 2s;
-	transform: translateX(800px);
-}
-
 .about .profile_image{
 	width: 30%;
 }
+
+.about .profile_image.left {
+	width: 30%;
+	transition: opacity 5s;
+	transform: none;
+	animation-name: kf_img_slide;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+}
+
 
 .about img {
 	width: 70%;
@@ -453,6 +456,15 @@ header h1 a {
 	 }
 	 100% {
 		 opacity: 1;
+	 }
+}
+
+@keyframes kf_img_slide {
+	 0% {
+		 transform: translateX(-600px);
+	 }
+	 100% {
+		transform: translateX(0);
 	 }
 }
 /* お問い合わせ */
