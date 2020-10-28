@@ -155,7 +155,6 @@ html {
 .header {
 	position: fixed;
 	left: 0;
-	/* top: -100px; */
 	width: 100%;
 	height: 80px;
 	z-index: 1;
@@ -193,19 +192,6 @@ header h1 a {
 }
 
 /* ハンバーガーメニュー */
-.accordion_content {
-	position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.95);
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.6s;
-}
-
 #sp_nav {
 	display: inline-block;
 	width: 0;
@@ -215,6 +201,7 @@ header h1 a {
 #sp_nav a {
 	color: #333333;
 }
+
 .accordion_content li {
 	display: block;
   opacity: 0;
@@ -223,27 +210,6 @@ header h1 a {
 	margin-top: 4rem;
 }
 
-.accordion_content li:nth-child(1) {
-	margin-top: 8rem;
-}
-
-.accordion_content.show li {
-  opacity: 1;
-	transform: none;
-}
-
-.accordion_content.show li:nth-child(1) {
-  transition-delay: 0.1s;
-}
-.accordion_content.show li:nth-child(2) {
-  transition-delay: 0.2s;
-}
-.accordion_content.show li:nth-child(3) {
-  transition-delay: 0.3s;
-}
-.accordion_content.show li:nth-child(4) {
-  transition-delay: 0.4s;
-}
 
 /* キービジュアル */
 .key_visual {
@@ -285,16 +251,6 @@ header h1 a {
 	width: 30%;
 }
 
-.about .profile_image.left {
-	width: 30%;
-	transition: opacity 5s;
-	transform: none;
-	animation-name: kf_img_slide;
-	animation-duration: .5s;
-	animation-fill-mode: forwards;
-}
-
-
 .about img {
 	width: 70%;
 	height: auto;
@@ -312,7 +268,6 @@ header h1 a {
 	text-shadow: 3px 3px 2px #fff;
 }
 
-
 .about .profile_text {
 	width: 50%;
 	background: #ffffff;
@@ -324,6 +279,19 @@ header h1 a {
 .about .profile_text p {
 	padding-bottom: 1.5rem;
 }
+
+.left {
+	animation-name: kf_about_left;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+}
+
+.right {
+	animation-name: kf_about_right;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+}
+
 /* スキル */
 .skills {
 	width: 100%;
@@ -371,6 +339,7 @@ header h1 a {
 .work_content {
 	width: 100%;
 	margin: 50px 0 100px;
+	/* opacity: 0; */
 }
 
 .work .work_content:nth-child(even) {
@@ -385,7 +354,9 @@ header h1 a {
 .work_text {
 	width: 30%;
 	margin-bottom: 10px;
+	opacity: 0;
 }
+
 
 .work_text h3 {
 	border-bottom: 1px solid #333333;
@@ -404,14 +375,14 @@ header h1 a {
 
 .img_zoom.inview {
 	opacity: 1;
-	animation-name: kf_img_show;
+	animation-name: kf_work_show;
 	animation-duration: 2s;
 }
-
 
 .work_img {
 	position: relative;
 	overflow: hidden;
+	opacity: 0;
 }
 
 .work_img::after {
@@ -423,50 +394,66 @@ header h1 a {
 	left: 0;
 	z-index: 2;
 	background: orange;
-	animation-name: kf_work_slide;
-	animation-duration: 1.5s;
+	animation-name: kf_work_cover;
+	animation-duration: .5s;
 	animation-fill-mode: forwards;
 }
 
-@keyframes kf_work_slide {
-	 0% {
-		 left: 0;
-		 right: 100%;
-	 }
-	 50% {
-		 left: 0;
-		 right: 0;
-	 }
-	 100% {
-		 left: 100%;
-		 right: 0;
-	 }
+.work_show {
+	transition: opacity 4s;
+	transition-delay: 1s;
+	opacity: 1;
 }
 
-@keyframes kf_img_show {
-	 0% {
-		 opacity: 0;
-	 }
-	 50% {
-		 opacity: 0;
-	 }
-	 50.1% {
-		 opacity: 1;
-		 transform: scaleX(1.5);
-	 }
-	 100% {
-		 opacity: 1;
-	 }
-}
-
-@keyframes kf_img_slide {
-	 0% {
-		 transform: translateX(-600px);
-	 }
-	 100% {
+@keyframes kf_about_left {
+	0% {
+		transform: translateX(-600px);
+	}
+	100% {
 		transform: translateX(0);
-	 }
+	}
 }
+
+@keyframes kf_about_right {
+	0% {
+		transform: translateX(600px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes kf_work_cover {
+	0% {
+		left: 0;
+		right: 100%;
+	}
+	50% {
+		left: 0;
+		right: 0;
+	}
+	100% {
+		left: 100%;
+		right: 0;
+	}
+}
+
+@keyframes kf_work_show {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	50.1% {
+		opacity: 1;
+		transform: scaleX(1.5);
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 /* お問い合わせ */
 .contact {
 	width: 100%;
@@ -546,6 +533,41 @@ button:hover {
 }
 
 /* ハンバーガー */
+.accordion_content {
+	position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s;
+}
+
+.accordion_content.show li {
+	opacity: 1;
+	transform: none;
+}
+
+.accordion_content li:nth-child(1) {
+	margin-top: 8rem;
+}
+
+.accordion_content.show li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.accordion_content.show li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.accordion_content.show li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.accordion_content.show li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
 .accordion_open {
 	width: 38px;
 	height: 30px;
@@ -607,6 +629,7 @@ button:hover {
   opacity: 1;
   pointer-events: auto;
 }
+
 
 /* キービジュアル */
 .kv_inner .kv_text {
