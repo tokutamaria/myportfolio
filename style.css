@@ -110,7 +110,7 @@ html {
 }
 
 .wrapper {
-	max-width: 1200px;
+	max-width: 1080px;
 	margin: 0 auto;
 	/* background:orange; */
 }
@@ -179,14 +179,14 @@ header h1 a {
 	transition: all .3s;
 	text-shadow: 3px 3px 2px #ffffff;
 }
+
 /* ヘッダーナビゲーション */
-.header .inner ul li {
+.header .inner ul li a {
+	display: inline-block;
 	font-weight: 500;
-  background: transparent;
-  outline: none !important;
-  transition: all 0.3s ease;
   position: relative;
-	padding: 10px 25px;
+	padding: 1.5rem 1rem;
+	margin-left: 2.5rem;
 }
 
 .header .inner .header_nav ul li a {
@@ -194,7 +194,6 @@ header h1 a {
 	font-weight: bold;
 }
 
-/* マウスオーバー時 */
 .header .inner ul li a:hover::after {
 	content: "";
 	display: block;
@@ -255,7 +254,7 @@ header h1 a {
 .about {
 	width: 100%;
 	height: auto;
-	padding: 8rem 0;
+	padding: 6rem 0 4rem;
 }
 
 .about .profile {
@@ -315,8 +314,7 @@ header h1 a {
 	height: auto;
 	background-color:#779BBD;
 	color: #fff;
-	padding: 6rem;
-
+	padding: 4rem;
 }
 
 .skills ul {
@@ -346,11 +344,12 @@ header h1 a {
 	width: 100%;
 	height: auto;
 	position: relative;
-	padding: 8rem 0;
+	padding-top: 4rem;
 }
 
 .wrapper .work_contents {
 	width: 100%;
+	padding: 0 60px;
 }
 
 .work_content {
@@ -402,24 +401,21 @@ header h1 a {
 	opacity: 0;
 }
 
-.work_img::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 2;
-	background: orange;
-	animation-name: kf_work_cover;
-	animation-duration: .5s;
+
+.work_show {
+	opacity: 1;
+	transition: opacity 4s;
+	animation-name: kf_nav_up;
+	animation-duration: .8s;
 	animation-fill-mode: forwards;
 }
 
-.work_show {
-	transition: opacity 4s;
-	transition-delay: 1s;
-	opacity: 1;
+.work_img img:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 10px #333333;
+	transition: .3s;
+	cursor: pointer;
+	user-select: auto;
 }
 
 @keyframes kf_about_left {
@@ -442,25 +438,10 @@ header h1 a {
 
 @keyframes kf_nav_up {
 	0% {
-		transform: translateY(30px);
+		transform: translateY(300px);
 	}
 	100% {
 		transform: translateY(4px);
-	}
-}
-
-@keyframes kf_work_cover {
-	0% {
-		left: 0;
-		right: 100%;
-	}
-	50% {
-		left: 0;
-		right: 0;
-	}
-	100% {
-		left: 100%;
-		right: 0;
 	}
 }
 
@@ -484,7 +465,7 @@ header h1 a {
 .contact {
 	width: 100%;
 	height: auto;
-	padding: 140px 0;
+	padding: 4rem 0;
 	margin: 0 auto;
 	background-image:url(/images/シティ.jpg);
 	background-size:  cover;
@@ -492,6 +473,7 @@ header h1 a {
 	background-repeat: no-repeat;
 	text-align: center;
 	max-width: none;
+	user-select: text;
 }
 
 .contact p {
@@ -674,16 +656,17 @@ button:hover {
 
 .about .profile_name {
 	width: 100%;
+	margin-bottom: 4rem
 }
 
 .about .profile_text {
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
 }
 
 /* スキル */
 .skills {
-	padding: 100px 50px;
+	padding: 4rem 2rem;
 }
 	.skills ul li {
 	width: 50%;
@@ -691,7 +674,7 @@ button:hover {
 
 /* 仕事 */
 .work {
-	padding: 100px 50px;
+	padding: 6rem 0 1rem;
 }
 
 .work_contents .work_content {
@@ -700,16 +683,16 @@ button:hover {
 
 .work_contents .work_text {
 	width: 100%;
+	margin-top: 6rem;
 }
 
 /* お問い合わせ */
 .contact {
-	padding: 100px 3rem;
+	padding: 4rem;
 }
 
 .contact input,
 .contact textarea {
 	width: 100%;
 }
-
 }
