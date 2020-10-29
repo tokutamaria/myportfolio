@@ -181,15 +181,32 @@ header h1 a {
 }
 /* ヘッダーナビゲーション */
 .header .inner ul li {
-	padding: .5rem 2.5rem;
+	font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  transition: all 0.3s ease;
+  position: relative;
+	padding: 10px 25px;
 }
 
 .header .inner .header_nav ul li a {
-	display: block;
-	position: relative;
 	color: #333333;
 	font-weight: bold;
 }
+
+/* マウスオーバー時 */
+.header .inner ul li a:hover::after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: calc(50% - .8rem);
+	width: 2rem;
+	border-top: 1px solid #333333;
+	transition: .3s;
+	animation-name: kf_nav_up;
+	animation-duration: .3s;
+	animation-fill-mode: forwards;
+	}
 
 /* ハンバーガーメニュー */
 #sp_nav {
@@ -420,6 +437,15 @@ header h1 a {
 	}
 	100% {
 		transform: translateX(0);
+	}
+}
+
+@keyframes kf_nav_up {
+	0% {
+		transform: translateY(30px);
+	}
+	100% {
+		transform: translateY(4px);
 	}
 }
 
