@@ -177,7 +177,12 @@ header h1 a {
 	font-size: 1.8rem;
 	font-family: adobe-caslon-pro, serif;
 	transition: all .3s;
-	text-shadow: 3px 3px 2px #ffffff;
+	text-shadow: 3px 3px 1px #ffffff;
+}
+
+header h1 a:hover {
+	text-shadow: 3px 3px 1px #333333;
+	color:#ffffff;
 }
 
 /* ヘッダーナビゲーション */
@@ -246,10 +251,11 @@ header h1 a {
 .kv_inner .kv_text{
 	position: absolute;
 	top: 65%;
-	right: 10%;
+	right:24%;
 	font-size: 2.5rem;
 	letter-spacing: .5rem;
 }
+
 /* 自己紹介 */
 .about {
 	width: 100%;
@@ -294,6 +300,36 @@ header h1 a {
 
 .about .profile_text p {
 	padding-bottom: 1.5rem;
+}
+
+.twitter,.mail,.github {
+	font-size: 1rem;
+	font-weight: bold;
+	color: #333333;
+}
+
+.twitter::before {
+	content: "\f099";
+	font-family: "Font Awesome 5 Brands";
+	font-size: 1.5rem;
+	color: #6CA3F6;
+	margin: 0 .3em 0;
+}
+
+.mail::before {
+	content: "\f0e0";
+	font-family: "Font Awesome 5 free";
+	font-size: 1.5rem;
+	color: navy;
+	margin: 0 .3em 0 3rem;
+}
+
+.github::before {
+	content: "\f09b";
+	font-family: "Font Awesome 5 Brands";
+	font-size: 1.5rem;
+	color: black;
+	margin: 0 .3em 0 3rem;
 }
 
 .left {
@@ -373,7 +409,6 @@ header h1 a {
 	opacity: 0;
 }
 
-
 .work_text h3 {
 	border-bottom: 1px solid #333333;
 	margin-bottom: 10px;
@@ -401,11 +436,10 @@ header h1 a {
 	opacity: 0;
 }
 
-
 .work_show {
 	opacity: 1;
 	transition: opacity 4s;
-	animation-name: kf_nav_up;
+	animation-name: kf_img_up;
 	animation-duration: .8s;
 	animation-fill-mode: forwards;
 }
@@ -438,10 +472,19 @@ header h1 a {
 
 @keyframes kf_nav_up {
 	0% {
-		transform: translateY(300px);
+		transform: translateY(30px);
 	}
 	100% {
 		transform: translateY(4px);
+	}
+}
+
+@keyframes kf_img_up {
+	0% {
+		transform: translateY(300px);
+	}
+	100% {
+		transform: translateY(0);
 	}
 }
 
@@ -491,6 +534,7 @@ header h1 a {
 	display: block;
 	margin: 0 auto;
 	margin-bottom: 1.5rem;
+	user-select: auto;
 }
 
 .contact textarea {
@@ -516,7 +560,7 @@ header h1 a {
 
 button:hover {
 	color: #fff;
-	background-color: navy;
+	background-color: #6CA3F6;
 	border: solid 2px #ffffff;
 	transition: .5s;
 }
@@ -531,8 +575,35 @@ button:hover {
 	font-size: .8rem;
 	font-weight: bold;
 }
-/* トップに移動 */
 
+/* トップに移動 */
+#page_top {
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	bottom: 8%;
+	right: 4%;
+	z-index: 1;
+	transition: transform .3s;
+}
+
+#page_top a {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	display: block;
+}
+
+.fa-chevron-circle-up {
+	background: #ffffff;
+	border-radius: 50%;
+	color: #6CA3F6;
+	opacity: .6;
+}
+
+.fa-chevron-circle-up:hover {
+	opacity: 1;
+}
 /*----------レスポンシブ----------*/
 @media (max-width: 768px) {
 /* ヘッダー */
@@ -694,5 +765,35 @@ button:hover {
 .contact input,
 .contact textarea {
 	width: 100%;
+}
+
+/* トップに移動 */
+#page_top {
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	z-index: 1;
+	transition: transform .3s;
+}
+
+#page_top a {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: block;
+}
+
+.fa-chevron-circle-up {
+	font-size: 2rem;
+	background: #ffffff;
+	border-radius: 50%;
+	color: #6CA3F6;
+	opacity: .6;
+}
+
+.fa-chevron-circle-up:hover {
+	opacity: 1;
 }
 }
