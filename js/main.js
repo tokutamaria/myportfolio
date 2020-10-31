@@ -1,24 +1,49 @@
 "use strict"
 {
-  const open = document.getElementById('open');                   /* ハンバーガー オープン*/
-  const close = document.getElementById('sp_nav');                /* ハンバーガー クローズ*/
-  const overlay = document.querySelector('.accordion_content');   /* ハンバーガー メニュー*/
+  const visual = document.getElementById('key_visual');           /* キービジュアル */
+  const head = document.getElementById('header');                 /* ヘッダー */
+  const open = document.getElementById('open');                   /* ハンバーガー オープン */
+  const close = document.getElementById('sp_nav');                /* ハンバーガー クローズ */
+  const overlay = document.querySelector('.accordion_content');   /* ハンバーガー メニュー */
   const windowWidth = document.documentElement.clientWidth;       /* 画面幅 */
   const sp = 768;                                                 /* レスポンシブ画面幅 */
-  const image = document.querySelector('.profile_image');         /*自己紹介 写真*/
-  const profile = document.querySelector('.profile_text');        /*自己紹介 テキスト*/
+  const image = document.querySelector('.profile_image');         /* 自己紹介 写真 */
+  const profile = document.querySelector('.profile_text');        /* 自己紹介 テキスト */
   const works = document.querySelectorAll(".work_content");       /* 仕事 */
   const contacts = document.querySelectorAll('#contact');         /* お問い合わせ */
   const skills = document.querySelector('.skill_list');           /* スキル */
-  const top = document.getElementById('page_top');
+  const top = document.getElementById('page_top');                /* ページ先頭に戻る */
 
-  /* ハンバーガー オープン*/
+  /* キービジュアル */
+  window.addEventListener('load', () => {
+    visual.classList.add('view');
+  });
+
+  /* ヘッダー */
+  window.addEventListener('DOMContentLoaded', function() {
+    head.style.visibility = 'hidden';
+    head.addEventListener('transitionend' , function() {
+      if(head.className !== 'view') {
+        head.style.visibility = 'hidden';
+      }
+    });
+    window.addEventListener('scroll' , function() {
+      if(100 < window.scrollY) {
+        head.style.visibility = 'visible';
+        head.classList.add('view');
+      } else {
+        head.classList.remove('view');
+      }
+    });
+  });
+
+  /* ハンバーガー オープン */
   open.addEventListener('click', () => {
     overlay.classList.toggle('show');
     open.classList.toggle('active');
   });
 
-  /* ハンバーガー クローズ*/
+  /* ハンバーガー クローズ */
   close.addEventListener('click', () => {
     overlay.classList.remove('show');
     open.classList.remove('active');
@@ -31,7 +56,7 @@
     }
   });
 
-  /*自己紹介*/
+  /* 自己紹介 */
   const about_left = function(entries, observer) {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
@@ -56,7 +81,7 @@
   ior.observe(profile);
 
   /* スキル */
-  const skill_li = function(entries , observer) {
+  const skill_li = function(entries) {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
         entry.target.classList.add('skill_show');
@@ -113,7 +138,7 @@
       }
     });
     window.addEventListener('scroll', function() {
-      if( 200 < window.scrollY) {
+      if( 100 < window.scrollY) {
         top.style.visibility = 'visible';
         top.classList.add('view');
       } else {
