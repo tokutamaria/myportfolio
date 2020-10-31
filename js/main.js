@@ -8,6 +8,9 @@
   const image = document.querySelector('.profile_image');         /*自己紹介 写真*/
   const profile = document.querySelector('.profile_text');        /*自己紹介 テキスト*/
   const works = document.querySelectorAll(".work_content");       /* 仕事 */
+  const contacts = document.querySelectorAll('#contact');         /* お問い合わせ */
+  const skills = document.querySelector('.skill_list');           /* スキル */
+  const top = document.getElementById('page_top');
 
   /* ハンバーガー オープン*/
   open.addEventListener('click', () => {
@@ -28,7 +31,7 @@
     }
   });
 
-  /*自己紹介スクロール*/
+  /*自己紹介*/
   const about_left = function(entries, observer) {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
@@ -52,6 +55,19 @@
   iol.observe(image);
   ior.observe(profile);
 
+  /* スキル */
+  const skill_li = function(entries , observer) {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('skill_show');
+        console.log('good');
+      }
+      });
+    }
+
+      const sk = new IntersectionObserver(skill_li);
+      sk.observe(skills);
+
   /* 仕事 */
   works.forEach(wk => {
     const text = wk.querySelector('.work_text');
@@ -63,9 +79,47 @@
         }
       });
     }
-
     const work = new IntersectionObserver(work_cb);
     work.observe(text);
     work.observe(img);
   });
+
+  /* お問い合わせ */
+  contacts.forEach(ct => {
+    const name = ct.querySelector('.contact_name');
+    const mail = ct.querySelector('.contact_mail');
+    const massage = ct.querySelector('.contact_massage');
+    const btn =ct.querySelector('.contact_btn');
+    const contact_form = function(entries , observer) {
+      entries.forEach (entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('contact_show');
+        }
+      });
+    }
+    const con = new IntersectionObserver(contact_form);
+    con.observe(name);
+    con.observe(mail);
+    con.observe(massage);
+    con.observe(btn);
+  });
+
+  /* ページ先頭に戻る */
+  window.addEventListener('DOMContentLoaded' , function() {
+    top.style.visibility = 'hidden';
+    top.addEventListener('transitionend', function() {
+      if (top.className !== 'view') {
+        top.style.visibility = 'hidden';
+      }
+    });
+    window.addEventListener('scroll', function() {
+      if( 200 < window.scrollY) {
+        top.style.visibility = 'visible';
+        top.classList.add('view');
+      } else {
+        top.classList.remove('view');
+      }
+    });
+  });
+
 }

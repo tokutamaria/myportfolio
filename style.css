@@ -353,10 +353,11 @@ header h1 a:hover {
 	padding: 4rem;
 }
 
-.skills ul {
+.skill_list {
 	flex-wrap: wrap;
 	align-items: center;
 	padding-top: 2rem;
+	opacity: 0;
 }
 
 .skills ul li {
@@ -364,6 +365,7 @@ header h1 a:hover {
 	text-align: center;
 	padding: 1rem;
 }
+
 
 .skills .skill_img {
 	width: 150px;
@@ -375,6 +377,13 @@ header h1 a:hover {
 	text-align: center;
 }
 
+.skill_show {
+	opacity: 1;
+	transition: opacity 4s;
+	animation-name: kf_img_up;
+	animation-duration: .8s;
+	animation-fill-mode: forwards;
+}
 /* 仕事 */
 .work {
 	width: 100%;
@@ -525,6 +534,11 @@ header h1 a:hover {
 	font-weight: bold;
 }
 
+.contact_name,
+.contact_mail,
+.contact_massage {
+	opacity: 0;
+}
 
 .contact input,
 .contact textarea {
@@ -543,7 +557,7 @@ header h1 a:hover {
 }
 
 .contact_btn {
-  background-color: #ffffff;
+	background-color: #ffffff;
   color: #333333;
 	outline: none;
 	border: solid 2px #333333;
@@ -556,6 +570,7 @@ header h1 a:hover {
 	cursor: pointer;
 	transition: .3s;
 	margin: 0 auto;
+	opacity: 0;
 }
 
 button:hover {
@@ -564,6 +579,15 @@ button:hover {
 	border: solid 2px #ffffff;
 	transition: .5s;
 }
+
+.contact_show {
+	opacity: 1;
+	transition: opacity 4s;
+	animation-name: kf_img_up;
+	animation-duration: .8s;
+	animation-fill-mode: forwards;
+}
+
 /* フッター */
 .footer {
 	width: 100%;
@@ -584,7 +608,12 @@ button:hover {
 	bottom: 8%;
 	right: 4%;
 	z-index: 1;
-	transition: transform .3s;
+	transition: ease .4s opacity;
+	opacity: 0;
+}
+
+#page_top.view {
+	opacity: 1;
 }
 
 #page_top a {
@@ -604,6 +633,7 @@ button:hover {
 .fa-chevron-circle-up:hover {
 	opacity: 1;
 }
+
 /*----------レスポンシブ----------*/
 @media (max-width: 768px) {
 /* ヘッダー */
