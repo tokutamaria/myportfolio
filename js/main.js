@@ -4,7 +4,7 @@
   const head = document.getElementById('header');                 /* ヘッダー */
   const open = document.getElementById('open');                   /* ハンバーガー オープン */
   const close = document.getElementById('sp_nav');                /* ハンバーガー クローズ */
-  const overlay = document.querySelector('.accordion_content');   /* ハンバーガー メニュー */
+  const overlay = document.querySelector('.header_nav');          /* ハンバーガー メニュー */
   const windowWidth = document.documentElement.clientWidth;       /* 画面幅 */
   const sp = 768;                                                 /* レスポンシブ画面幅 */
   const image = document.querySelector('.profile_image');         /* 自己紹介 写真 */
@@ -13,6 +13,7 @@
   const contacts = document.querySelectorAll('#contact');         /* お問い合わせ */
   const skills = document.querySelector('.skill_list');           /* スキル */
   const top = document.getElementById('page_top');                /* ページ先頭に戻る */
+  const links = document.querySelectorAll('a[href^="#"]');
 
   /* キービジュアル */
   window.addEventListener('load', () => {
@@ -22,11 +23,6 @@
   /* ヘッダー */
   window.addEventListener('DOMContentLoaded', function() {
     head.style.visibility = 'hidden';
-    head.addEventListener('transitionend' , function() {
-      if(head.className !== 'view') {
-        head.style.visibility = 'hidden';
-      }
-    });
     window.addEventListener('scroll' , function() {
       if(100 < window.scrollY) {
         head.style.visibility = 'visible';
@@ -85,7 +81,6 @@
     entries.forEach(entry => {
       if(entry.isIntersecting) {
         entry.target.classList.add('skill_show');
-        console.log('good');
       }
       });
     }
@@ -147,4 +142,31 @@
     });
   });
 
+  /* スクロール */
+  document.addEventListener('click' , e => {
+    const target = e.target;
+    if (!target.classList.contains('link')) return;
+    e.preventDefault();
+    const targetId = target.hash;
+    const targetElement = document.querySelector(targetId);
+    const rectTop = targetElement.getBoundingClientRect().top;
+    const offsetTop = window.pageYOffset;
+    const buffer = 50;
+    const top = rectTop + offsetTop - buffer;
+    
+    window.scroll({
+      top: top,
+      behavior: 'smooth'
+    });
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click' , (e) => {
+      e.preventDefault();
+      window.scroll( {
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
 }
