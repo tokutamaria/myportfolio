@@ -107,8 +107,8 @@
   /* お問い合わせ */
   contacts.forEach(ct => {
     const name = ct.querySelector('.contact_name');
-    const mail = ct.querySelector('.contact_mail');
-    const massage = ct.querySelector('.contact_massage');
+    const mail = ct.querySelector('.contact_email');
+    const massage = ct.querySelector('.contact_message');
     const btn =ct.querySelector('.contact_btn');
     const contact_form = function(entries , observer) {
       entries.forEach (entry => {
@@ -153,7 +153,7 @@
     const offsetTop = window.pageYOffset;
     const buffer = 50;
     const top = rectTop + offsetTop - buffer;
-    
+
     window.scroll({
       top: top,
       behavior: 'smooth'

@@ -1,3 +1,28 @@
+<?php
+session_start();
+
+if (!empty($_POST)) {
+  if ($_POST['name'] === '') {
+    $error['name'] = 'blank';
+  }
+  if ($_POST['email'] === '') {
+    $error['email'] = 'blank';
+  }
+  if ($_POST['message'] === '') {
+    $error['message'] = 'blank';
+  }
+  if (empty($error)) {
+    $_SESSION['check'] = $_POST;
+    header('Location: check.php');
+    exit();
+  }
+}
+
+if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
+  $_POST = $_SESSION['check'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -47,16 +72,6 @@
   </a>
 </header>
 
-  <!-- <div class="accordion_content">
-    <nav>
-      <ul id="sp_nav">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#work">WORK</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
-  </div> -->
   <!-- キービジュアル -->
   <main>
   <section id="key_visual">
@@ -219,18 +234,34 @@
   <div class="wrapper">
       <h2 class="front_text">CONTACT<span class="back_text">CONTACT</span></h2>
       <p>お問い合わせはこちら</p>
-      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf6mqnsPXEWxrNnKgi7hHKUn7-bumFYMIT4dedMm1DjpaVC5w/formResponse" autocomplete="off">
+      <form action="" method="post" autocomplete="off">
+        <!-- 名前 -->
         <div class="contact_name">
+          <?php if ($error['name'] == 'blank'): ?>
+          <p class = "error">※お名前を入力してください</p>
+          <?php endif; ?>
           <label for="name"><h3>Name</h3></label>
-          <input type="text" name="name" required>
+          <input type="text" name="name"
+          value="<?php print(htmlspecialchars($_POST['name'], ENT_QUOTES)); ?>">
         </div>
-        <div class="contact_mail">
+        <!-- メールアドレス -->
+        <div class="contact_email">
+          <?php if ($error['email'] == 'blank'): ?>
+          <p class = "error">※メールアドレスを入力してください</p>
+          <?php endif; ?>
           <label for="email"><h3>E-mail</h3></label>
-          <input id="email" type="text" name="emailAddress" required>
+          <input id="email" type="text" name="email"
+          value="<?php print(htmlspecialchars($_POST['email'], ENT_QUOTES)); ?>">
         </div>
-        <div class="contact_massage">
+        <!-- メッセージ -->
+        <div class="contact_message">
+          <?php if ($error['message'] == 'blank'): ?>
+          <p class = "error">※メーセージを入力してください</p>
+          <?php endif; ?>
           <label for="massage"><h3>Message</h3></label>
-          <textarea id="massage" name="entry" id="" cols="30" rows="10"></textarea>
+          <textarea id="massage" name="message" cols="30" rows="10">
+            <?php print(htmlspecialchars($_POST['message'], ENT_QUOTES)); ?>
+          </textarea>
         </div>
         <button type="submit" name="button" value="送信" class="contact_btn">送信</button>
       </form>

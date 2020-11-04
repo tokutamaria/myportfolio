@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
-
 *,
 *::before,
 *::after {
@@ -155,355 +153,6 @@ html {
   border-radius: 2px;
 }
 
-/* ヘッダー */
-.header {
-	position: fixed;
-	left: 0;
-	width: 100%;
-	height: 80px;
-	z-index: 1;
-	background:#E5E5E5;
-	opacity: 0;
-	padding: 0 48px;
-	box-shadow: 0 2px 5px #13363E;
-}
-
-.header.view {
-	opacity: .9;
-	transition: opacity 2s;
-}
-
-.header .inner {
-	width: 100%;
-	height: 80px;
-	align-items: center;
-}
-
-/* ヘッダータイトル */
-header h1 a {
-	color: #333333;
-	font-size: 1.8rem;
-	font-family: adobe-caslon-pro, serif;
-	transition: all .3s;
-	text-shadow: 3px 3px 1px #ffffff;
-}
-
-header h1 a:hover {
-	text-shadow: 3px 3px 1px #333333;
-	color:#ffffff;
-}
-
-/* ハンバーガーメニュー */
-.header .inner ul li a {
-	display: inline-block;
-	font-weight: 500;
-  position: relative;
-	padding: 1.5rem 1rem;
-	margin-left: 2.5rem;
-	color: #333333;
-	font-weight: bold;
-}
-
-.header .inner ul li a:hover::after {
-	content: "";
-	display: block;
-	position: absolute;
-	left: calc(50% - .8rem);
-	width: 2rem;
-	border-top: 1px solid #333333;
-	transition: .3s;
-	animation-name: kf_nav_up;
-	animation-duration: .3s;
-	animation-fill-mode: forwards;
-	}
-
-/* キービジュアル */
-#key_visual {
-	width: 100%;
-	height: 100vh;
-	background-image: url(/images/自由の女神.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	opacity: 0;
-}
-
-#key_visual.view {
-	opacity: 1;
-	transition: opacity 4s;
-}
-
-.kv_inner {
-	position: relative;
-	width: 100%;
-	height: 100%;
-}
-
-.kv_inner .kv_text{
-	position: absolute;
-	top: 65%;
-	right:24%;
-	font-size: 2.5rem;
-	letter-spacing: .5rem;
-}
-
-/* 自己紹介 */
-.about {
-	width: 100%;
-	height: auto;
-	padding: 6rem 0 4rem;
-}
-
-.about .profile {
-	flex-wrap: wrap;
-	padding: 4rem 1rem;
-	z-index: 1;
-}
-
-.about .profile_image{
-	width: 30%;
-}
-
-.about img {
-	width: 70%;
-	height: auto;
-	box-shadow: 0 0 20px #13363E;
-	border-radius: 50%;
-	margin:0 auto;
-}
-
-.about .profile_name  {
-	width: 100%;
-	margin: 2rem auto;
-	text-align: center;
-	font-size: 2rem;
-	border-bottom: 1px solid #333333;
-	text-shadow: 3px 3px 2px #fff;
-}
-
-.about .profile_text {
-	width: 50%;
-	background: #ffffff;
-	box-shadow: 0 0 4px #13363E;
-	border-radius: 10px;
-	padding: 30px;
-}
-
-.about .profile_text p {
-	padding-bottom: 1.5rem;
-}
-
-.twitter,.mail,.github {
-	font-size: 1rem;
-	font-weight: bold;
-	color: #333333;
-}
-
-.twitter::before {
-	content: "\f099";
-	font-family: "Font Awesome 5 Brands";
-	font-size: 1.5rem;
-	color: #6CA3F6;
-	margin: 0 .3em 0;
-}
-
-.mail::before {
-	content: "\f0e0";
-	font-family: "Font Awesome 5 free";
-	font-size: 1.5rem;
-	color: navy;
-	margin: 0 .3em 0 3rem;
-}
-
-.github::before {
-	content: "\f09b";
-	font-family: "Font Awesome 5 Brands";
-	font-size: 1.5rem;
-	color: black;
-	margin: 0 .3em 0 3rem;
-}
-
-.left {
-	animation-name: kf_about_left;
-	animation-duration: .5s;
-	animation-fill-mode: forwards;
-}
-
-.right {
-	animation-name: kf_about_right;
-	animation-duration: .5s;
-	animation-fill-mode: forwards;
-}
-
-/* スキル */
-.skills {
-	width: 100%;
-	height: auto;
-	background-color:#779BBD;
-	color: #fff;
-	padding: 4rem;
-}
-
-.skill_list {
-	flex-wrap: wrap;
-	align-items: center;
-	padding-top: 2rem;
-	opacity: 0;
-}
-
-.skills ul li {
-	width: calc(100%/3);
-	text-align: center;
-	padding: 1rem;
-}
-
-
-.skills .skill_img {
-	width: 150px;
-	height: 150px;
-	margin: 0 auto;
-}
-
-.skill ul p {
-	text-align: center;
-}
-
-.skill_show {
-	opacity: 1;
-	transition: opacity 4s;
-	animation-name: kf_img_up;
-	animation-duration: .8s;
-	animation-fill-mode: forwards;
-}
-/* 仕事 */
-.work {
-	width: 100%;
-	height: auto;
-	position: relative;
-	padding-top: 4rem;
-}
-
-.wrapper .work_contents {
-	width: 100%;
-	padding: 0 60px;
-}
-
-.work_content {
-	width: 100%;
-	margin: 50px 0 100px;
-	/* opacity: 0; */
-}
-
-.work .work_content:nth-child(even) {
-	flex-direction: row-reverse;
-}
-
-.work .work_info {
-	text-align: center;
-	margin: 6rem 0;
-}
-
-.work_text {
-	width: 30%;
-	margin-bottom: 10px;
-	opacity: 0;
-}
-
-.work_text h3 {
-	border-bottom: 1px solid #333333;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-}
-
-.work p,
-.work h3 {
-	text-align: center;
-}
-
-.img_zoom {
-	opacity: 0;
-}
-
-.img_zoom.inview {
-	opacity: 1;
-	animation-name: kf_work_show;
-	animation-duration: 2s;
-}
-
-.work_img {
-	position: relative;
-	overflow: hidden;
-	opacity: 0;
-}
-
-.work_show {
-	opacity: 1;
-	transition: opacity 4s;
-	animation-name: kf_img_up;
-	animation-duration: .8s;
-	animation-fill-mode: forwards;
-}
-
-.work_img img:hover {
-	transform: translateY(-10px);
-	box-shadow: 0 10px 10px #333333;
-	transition: .3s;
-	cursor: pointer;
-	user-select: auto;
-}
-
-@keyframes kf_about_left {
-	0% {
-		transform: translateX(-600px);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-
-@keyframes kf_about_right {
-	0% {
-		transform: translateX(600px);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-
-@keyframes kf_nav_up {
-	0% {
-		transform: translateY(30px);
-	}
-	100% {
-		transform: translateY(4px);
-	}
-}
-
-@keyframes kf_img_up {
-	0% {
-		transform: translateY(300px);
-	}
-	100% {
-		transform: translateY(0);
-	}
-}
-
-@keyframes kf_work_show {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 0;
-	}
-	50.1% {
-		opacity: 1;
-		transform: scaleX(1.5);
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 /* お問い合わせ */
 .contact {
 	width: 100%;
@@ -528,7 +177,7 @@ header h1 a:hover {
 .contact_name,
 .contact_email,
 .contact_message {
-	opacity: 0;
+	opacity: 1;
 }
 
 .contact input,
@@ -561,7 +210,6 @@ header h1 a:hover {
 	cursor: pointer;
 	transition: .3s;
 	margin: 0 auto;
-	opacity: 0;
 }
 
 button:hover {
@@ -571,65 +219,19 @@ button:hover {
 	transition: .5s;
 }
 
-.contact_show {
+/* .contact_show {
 	opacity: 1;
 	transition: opacity 4s;
 	animation-name: kf_img_up;
 	animation-duration: .8s;
 	animation-fill-mode: forwards;
-}
+} */
 
 .contact_name p.error,
 .contact_email p.error,
 .contact_message p.error {
 	color: red;
 	padding: 0;
-}
-
-/* フッター */
-.footer {
-	width: 100%;
-	height: 60px;
-}
-.footer .inner p {
-	text-align: center;
-	line-height: 60px;
-	font-size: .8rem;
-	font-weight: bold;
-}
-
-/* トップに移動 */
-#page_top {
-	width: 60px;
-	height: 60px;
-	position: fixed;
-	bottom: 8%;
-	right: 4%;
-	z-index: 1;
-	transition: ease .4s opacity;
-	opacity: 0;
-}
-
-#page_top.view {
-	opacity: 1;
-}
-
-#page_top a {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	display: block;
-}
-
-.fa-chevron-circle-up {
-	background: #ffffff;
-	border-radius: 50%;
-	color: #6CA3F6;
-	opacity: .6;
-}
-
-.fa-chevron-circle-up:hover {
-	opacity: 1;
 }
 
 /*----------レスポンシブ----------*/
