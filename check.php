@@ -1,9 +1,24 @@
 <?php
 session_start();
+require('dbconnect.php');
 
 if (!isset($_SESSION['check'])) {
     header('Location: index.php');
     exit();
+}
+
+if(!empty($_POST)) {
+  $statement = $db->prepare('INSERT INTO members SET name=?, email=?, message=?, created=NOW()');
+  echo $statement->execute(array(
+    $_SESSION['check']['name'],
+    $_SESSION['check']['email'],
+    $_SESSION['check']['message'],
+    // $_SESSION['check']['created'],
+  ));
+  unset($_SESSION['check']);
+
+  header('Location: finish.php');
+  exit();
 }
 ?>
 
@@ -19,38 +34,30 @@ if (!isset($_SESSION['check'])) {
 <!-- お問い合わせ -->
   <section class="contact" id="contact">
   <div class="wrapper">
-      <h2 class="front_text">CONTACT<span class="back_text">CONTACT</span></h2>
-      <p>お問い合わせはこちら</p>
+      <h2 class="front_text">CONFIRM<span class="back_text">CONFIRM</span></h2>
+      <p>内容をご確認ください</p>
       <form action="" method="post" autocomplete="off">
+      <input type="hidden" name="action" value="submit">
         <!-- 名前 -->
         <div class="contact_name">
-          <?php if ($error['name'] == 'blank'): ?>
-          <p class = "error">※お名前を入力してください</p>
-          <?php endif; ?>
           <label for="name"><h3>Name</h3></label>
           <input type="text" name="name"
           value="<?php print(htmlspecialchars($_SESSION['check']['name'], ENT_QUOTES)); ?>">
         </div>
         <!-- メールアドレス -->
         <div class="contact_email">
-          <?php if ($error['email'] == 'blank'): ?>
-          <p class = "error">※メールアドレスを入力してください</p>
-          <?php endif; ?>
           <label for="email"><h3>E-mail</h3></label>
           <input id="email" type="text" name="email"
           value="<?php print(htmlspecialchars($_SESSION['check']['email'], ENT_QUOTES)); ?>">
         </div>
         <!-- メッセージ -->
         <div class="contact_message">
-          <?php if ($error['message'] == 'blank'): ?>
-          <p class = "error">※メーセージを入力してください</p>
-          <?php endif; ?>
           <label for="massage"><h3>Message</h3></label>
-          <textarea id="massage" name="message" cols="30" rows="10">
-            <?php print(htmlspecialchars($_SESSION['check']['message'], ENT_QUOTES)); ?>
-          </textarea>
+          <textarea id="massage" name="message" cols="30" rows="10"><?php print(htmlspecialchars($_SESSION['check']['message'], ENT_QUOTES)); ?></textarea>
         </div>
-        <button type="submit" name="button" value="送信" class="contact_btn">送信</button>
+        <div><a href="index.php?action=rewrite" class=contact_btn>考え直す</a>
+        <button type="submit" name="button" value="送信" class="contact_btn">これでよし！</button>
+        </div>
       </form>
     </div>
   </section>

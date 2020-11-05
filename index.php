@@ -259,9 +259,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
           <p class = "error">※メーセージを入力してください</p>
           <?php endif; ?>
           <label for="massage"><h3>Message</h3></label>
-          <textarea id="massage" name="message" cols="30" rows="10">
-            <?php print(htmlspecialchars($_POST['message'], ENT_QUOTES)); ?>
-          </textarea>
+          <textarea id="massage" name="message" cols="30" rows="10"><?php print(htmlspecialchars($_POST['message'], ENT_QUOTES)); ?></textarea>
         </div>
         <button type="submit" name="button" value="送信" class="contact_btn">送信</button>
       </form>
