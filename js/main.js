@@ -12,8 +12,9 @@
   const works = document.querySelectorAll(".work_content");       /* 仕事 */
   const contacts = document.querySelectorAll('#contact');         /* お問い合わせ */
   const skills = document.querySelector('.skill_list');           /* スキル */
-  const top = document.getElementById('page_top');                /* ページ先頭に戻る */
-  const links = document.querySelectorAll('a[href^="#"]');
+  const top = document.getElementById('page_top');                /* 先頭に戻る（ナビゲーション用） */
+  const links = document.querySelectorAll('a[href^="#"]');        /* 先頭に戻る（その他のボタン）*/
+  const btn = document.querySelector('.contact_btn');              /* 送信ボタン */
 
   /* キービジュアル */
   window.addEventListener('load', () => {
@@ -109,7 +110,7 @@
     const name = ct.querySelector('.contact_name');
     const mail = ct.querySelector('.contact_email');
     const massage = ct.querySelector('.contact_message');
-    const btn =ct.querySelector('.contact_btn');
+    const submit =ct.querySelector('.contact_btn');
     const contact_form = function(entries , observer) {
       entries.forEach (entry => {
         if(entry.isIntersecting) {
@@ -121,7 +122,14 @@
     con.observe(name);
     con.observe(mail);
     con.observe(massage);
-    con.observe(btn);
+    con.observe(submit);
+  });
+
+  /* アラート */
+  btn.addEventListener('click' , () => {
+    if(form.name.value == "" || form.email.value == "" || form.message.value == "") {
+      alert("すべての項目に記入してください");
+    }
   });
 
   /* ページ先頭に戻る */

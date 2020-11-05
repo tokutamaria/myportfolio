@@ -239,6 +239,11 @@ a.contact_btn:hover {
 	margin-top: 100px;
 }
 
+.submit_image {
+	width: 60%;
+	height: 60%;
+	margin: 0 auto;
+}
 /*----------レスポンシブ----------*/
 @media (max-width: 768px) {
 /* お問い合わせ */

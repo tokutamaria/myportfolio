@@ -87,7 +87,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
       <h2 class="front_text">about me<span class="back_text">about me</span></h2>
       <div class="profile flex around">
         <div class="profile_image">
-          <img src="/images/Portfolio.jpg" class="my_image">
+          <img src="/myportfolio/images/Portfolio.jpg" class="my_image">
           <h2 class="profile_name">Takuto Arima</h2>
         </div>
         <div class="profile_text">
@@ -120,11 +120,11 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
         </li>
         <li>
           <p>Photoshop</p>
-          <img class="skill_img" src="/images/Ps.jpg" alt="フォトショップ">
+          <img class="skill_img" src="/myportfolio/images/Ps.jpg" alt="フォトショップ">
         </li>
         <li>
           <p>Illustrator</p>
-          <img class="skill_img" src="/images/Ai.jpg" alt="イラストレーター">
+          <img class="skill_img" src="/myportfolio/images/Ai.jpg" alt="イラストレーター">
         </li>
         <li>
           <p>php</p>
@@ -234,7 +234,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
   <div class="wrapper">
       <h2 class="front_text">CONTACT<span class="back_text">CONTACT</span></h2>
       <p>お問い合わせはこちら</p>
-      <form action="" method="post" autocomplete="off">
+      <form action="" method="post" name="form" autocomplete="off">
         <!-- 名前 -->
         <div class="contact_name">
           <?php if ($error['name'] == 'blank'): ?>
