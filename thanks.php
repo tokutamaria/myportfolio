@@ -9,10 +9,10 @@
 <body>
     <section class="contact" id="contact">
     <div class="wrapper">
-        <h2 class="front_text">THANK YOU<span class="back_text">THANK YOU</span></h2>
-        <h2 class="submit_message">送信完了</h2>
-        <img class="submit_image "src="/myportfolio/images/message.png" alt="送信完了">
-        <p><a href="index.php" class=contact_btn>トップページへ</a></p>
+        <h2 class="front_text">GRATEFUL<span class="back_text">GRATEFUL</span></h2>
+        <h2 class="submit_message">送信できましたよ〜ン♪</h2>
+        <img class="submit_image "src="/myportfolio/images/message_image.png" alt="送信完了">
+        <p><a href="index.php" class=top_btn>トップページへ</a></p>
     </div>
     </section>
 </body>

@@ -17,7 +17,7 @@ if(!empty($_POST)) {
   ));
   unset($_SESSION['check']);
 
-  header('Location: finish.php');
+  header('Location: thanks.php');
   exit();
 }
 ?>
@@ -35,7 +35,7 @@ if(!empty($_POST)) {
   <section class="contact" id="contact">
   <div class="wrapper">
       <h2 class="front_text">CONFIRM<span class="back_text">CONFIRM</span></h2>
-      <p>内容をご確認ください</p>
+      <p>メッセージを送る前にもう一度ご確認ください</p>
       <form action="" method="post" autocomplete="off">
       <input type="hidden" name="action" value="submit">
         <!-- 名前 -->
@@ -55,8 +55,8 @@ if(!empty($_POST)) {
           <label for="massage"><h3>Message</h3></label>
           <textarea id="massage" name="message" cols="30" rows="10"><?php print(htmlspecialchars($_SESSION['check']['message'], ENT_QUOTES)); ?></textarea>
         </div>
-        <div><a href="index.php?action=rewrite" class=contact_btn>考え直す</a>
-        <button type="submit" name="button" value="送信" class="contact_btn">これでよし！</button>
+        <div><a href="index.php?action=rewrite" class=contact_btn>戻 る</a>
+        <button type="submit" name="button" value="送信" class="contact_btn">送 信</button>
         </div>
       </form>
     </div>

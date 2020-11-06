@@ -261,7 +261,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
           <label for="massage"><h3>Message</h3></label>
           <textarea id="massage" name="message" cols="30" rows="10"><?php print(htmlspecialchars($_POST['message'], ENT_QUOTES)); ?></textarea>
         </div>
-        <button type="submit" name="button" value="送信" class="contact_btn">送信</button>
+        <button type="submit" name="button" value="送信" class="contact_btn">確認画面へ</button>
       </form>
     </div>
   </section>
