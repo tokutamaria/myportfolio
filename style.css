@@ -304,7 +304,6 @@ header h1 a:hover {
 	font-family: "Font Awesome 5 Brands";
 	font-size: 1.5rem;
 	color: #6CA3F6;
-	margin: 0 .3em 0;
 }
 
 .mail::before {
@@ -312,7 +311,6 @@ header h1 a:hover {
 	font-family: "Font Awesome 5 free";
 	font-size: 1.5rem;
 	color: navy;
-	margin: 0 .3em 0 3rem;
 }
 
 .github::before {
@@ -320,7 +318,6 @@ header h1 a:hover {
 	font-family: "Font Awesome 5 Brands";
 	font-size: 1.5rem;
 	color: black;
-	margin: 0 .3em 0 3rem;
 }
 
 .left {
@@ -420,19 +417,12 @@ header h1 a:hover {
 	text-align: center;
 }
 
-.img_zoom {
-	opacity: 0;
-}
-
 .img_zoom.inview {
 	opacity: 1;
-	animation-name: kf_work_show;
-	animation-duration: 2s;
+	object-fit: contain;
 }
 
-.work_img {
-	position: relative;
-	overflow: hidden;
+.work_img  {
 	opacity: 0;
 }
 
@@ -485,22 +475,6 @@ header h1 a:hover {
 	}
 	100% {
 		transform: translateY(0);
-	}
-}
-
-@keyframes kf_work_show {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 0;
-	}
-	50.1% {
-		opacity: 1;
-		transform: scaleX(1.5);
-	}
-	100% {
-		opacity: 1;
 	}
 }
 
@@ -566,7 +540,7 @@ header h1 a:hover {
 
 button:hover {
 	color: #fff;
-	background-color: #000000;
+	background-color: #A3C2EF;
 	border: solid 2px #ffffff;
 	transition: .5s;
 }
@@ -755,6 +729,11 @@ button:hover {
 .about .profile_text {
 	width: 80%;
 	margin: 0 auto;
+}
+
+.twitter,.mail,.github,
+.twitter::before,.mail::before,.github::before {
+	font-size: 1rem;
 }
 
 /* スキル */

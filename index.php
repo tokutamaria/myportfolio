@@ -94,7 +94,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
            <p>1988年07月21日生まれ/32歳</p>
            <p>大阪府堺市出身</p>
            <p>20歳を機に役者を目指して上京し、以後、芸能活動に従事しておりました。しかしながら、COVIT-19の影響により、引退を考えるに至りました。2020年６月から独学で学習を開始しました。学習ログは毎回gitにプッシュして記録するようにしております。</p>
-          <ul class="sns flex ">
+          <ul class="sns flex around">
             <li><a href="https://twitter.com/tackbook" class="twitter" target="_blank">Twitter</a></li>
             <li><a href="mailto:ta910arima@gmail.com" class="mail"
             target="_blank">E-mail</a></li>
@@ -147,13 +147,14 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
           <div class="work_text">
             <h3>
               <i class="fas fa-feather-alt"></i>
-              LP模写❶
+              架空サイト❶
             </h3>
-            <p>シンプルなホームページ</p>
+            <p>コーポーレートサイト</p>
           </div>
           <div class="work_img">
-            <a href="https://placehold.jp/600x400.png">
-              <img class="img_zoom inview" src="https://placehold.jp/600x400.png" alt="">
+            <a href="/myportfolio/images/架空サイト全体１.png">
+              <img class="img_zoom inview" src="/myportfolio/images/架空サイト１.jpg"
+              alt="コーポレートサイト" width="600px" height="500px">
             </a>
           </div>
         </div>
@@ -161,13 +162,14 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
           <div class="work_text">
             <h3>
               <i class="fas fa-feather-alt"></i>
-              LP模写❷
+              架空サイト❷
             </h3>
-            <p>シンプルなホームページ</p>
+            <p>レストランのホームページ</p>
           </div>
           <div class="work_img">
-            <a href="">
-              <img class="img_zoom inview" src="https://placehold.jp/600x400.png" alt="">
+            <a href="/myportfolio/images/架空サイト全体２.png">
+              <img class="img_zoom inview" src="/myportfolio/images/架空サイト２.jpg"
+              alt="レストランのサイト" width="600" height="500">
             </a>
           </div>
         </div>
@@ -190,34 +192,6 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
             <h3>
               <i class="fas fa-feather-alt"></i>
               LP模写❹
-            </h3>
-            <p>シンプルなホームページ</p>
-          </div>
-          <div class="work_img">
-            <a href="">
-              <img class="img_zoom inview" src="https://placehold.jp/600x400.png" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="work_content flex space">
-          <div class="work_text">
-            <h3>
-              <i class="fas fa-feather-alt"></i>
-              LP模写❺
-            </h3>
-            <p>シンプルなホームページ</p>
-          </div>
-          <div class="work_img">
-            <a href="">
-              <img class="img_zoom inview" src="https://placehold.jp/600x400.png" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="work_content flex space">
-          <div class="work_text">
-            <h3>
-              <i class="fas fa-feather-alt"></i>
-              LP模写❻
             </h3>
             <p>シンプルなホームページ</p>
           </div>
@@ -276,7 +250,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
   </footer>
   <!-- トップに移動 -->
   <div id="page_top">
-    <a href="#"><i class="fas fa-chevron-circle-up fa-4x"></i></a>
+    <a href="#"><i class="fas fa-chevron-circle-up fa-3x"></i></a>
   </div>
   <script src="js/main.js"></script>
 </body>

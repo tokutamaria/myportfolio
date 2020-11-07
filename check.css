@@ -208,7 +208,7 @@ button:hover,
 a.contact_btn:hover,
 a.top_btn:hover {
 	color: #fff;
-	background-color: #000000;
+	background-color: #A3C2EF;
 	border: solid 2px #ffffff;
 	transition: .5s;
 }
@@ -218,7 +218,9 @@ a.top_btn:hover {
 	font-size: 1.5rem;
 	margin: 4rem 0;
 	color: #000000;
-	transform: rotate(-15deg);
+	animation-name: submit_message;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
 }
 
 .submit_image {
@@ -226,6 +228,21 @@ a.top_btn:hover {
 	height: 50%;
 	margin: 0 auto;
 	margin-bottom: -50px;
+}
+
+@keyframes submit_message {
+	0% {
+transform: scale(0.5);
+	}
+	20% {
+transform: scale(1.5);
+	}
+	40% {
+transform: scale(1);
+	}
+	100% {
+transform: rotate(-15deg);
+	}
 }
 
 /*----------レスポンシブ----------*/

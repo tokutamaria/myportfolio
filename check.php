@@ -13,7 +13,6 @@ if(!empty($_POST)) {
     $_SESSION['check']['name'],
     $_SESSION['check']['email'],
     $_SESSION['check']['message'],
-    // $_SESSION['check']['created'],
   ));
   unset($_SESSION['check']);
 
@@ -35,7 +34,7 @@ if(!empty($_POST)) {
   <section class="contact" id="contact">
   <div class="wrapper">
       <h2 class="front_text">CONFIRM<span class="back_text">CONFIRM</span></h2>
-      <p>メッセージを送る前にもう一度ご確認ください</p>
+      <p>メッセージを送る前に確認してね</p>
       <form action="" method="post" autocomplete="off">
       <input type="hidden" name="action" value="submit">
         <!-- 名前 -->
