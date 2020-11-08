@@ -41,7 +41,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
   <!-- fontawesome -->
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <!-- サイトアイコン -->
-  <link rel="icon" href="/images/favicon (4).ico">
+  <link rel="icon" href="/myportfolio/images/favicon.jpg">
   <!-- lightbox -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -177,13 +177,14 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
           <div class="work_text">
             <h3>
               <i class="fas fa-feather-alt"></i>
-              LP模写❸
+              WordPress
             </h3>
-            <p>シンプルなホームページ</p>
+            <p>ブログ投稿サイト</p>
           </div>
           <div class="work_img">
-            <a href="">
-              <img class="img_zoom inview" src="https://placehold.jp/600x400.png" alt="">
+            <a href="https://tacbook.online">
+              <img class="img_zoom inview" src="/myportfolio/images/WordPress.jpg"
+              alt="WordPress" width="600" height="500">
             </a>
           </div>
         </div>
