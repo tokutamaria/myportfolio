@@ -188,17 +188,26 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
             </a>
           </div>
         </div>
+    </div>
+  </section>
+  <!-- 事業計画案 -->
+  <section class="project" id="project">
+    <div class="wrapper">
+      <h2 class="front_text">PROJECT<span class="back_text">PROJECT</span></h2>
+      <p class="work_info">事業計画案をご紹介します</p>
+      <div class="work_contents">
         <div class="work_content flex space">
           <div class="work_text">
             <h3>
               <i class="fas fa-feather-alt"></i>
-              LP模写❹
+              事業計画案
             </h3>
-            <p>シンプルなホームページ</p>
+            <p>不動産ポータルサイト</p>
           </div>
           <div class="work_img">
-            <a href="">
-              <img class="img_zoom inview" src="https://placehold.jp/600x400.png" alt="">
+            <a href="/myportfolio/images/架空サイト全体１.png">
+              <img class="img_zoom inview" src="/myportfolio/images/表紙.jpg"
+              alt="企画書" width="600px" height="500px">
             </a>
           </div>
         </div>
