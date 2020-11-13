@@ -53,12 +53,13 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
   <header class="header" id="header">
     <nav class="inner flex space align">
       <div class="top_logo">
-        <h1><a href="#">Let It Be</a></h1>
+        <h1><a href="#">Let's</a></h1>
       </div>
       <div class="header_nav open">
         <ul class="flex" id="sp_nav">
           <li><a class="link" href="#about">ABOUT</a></li>
           <li><a class="link" href="#skills">SKILLS</a></li>
+          <li><a class="link" href="#project">PROJECT</a></li>
           <li><a class="link" href="#work">WORK</a></li>
           <li><a class="link" href="#contact">CONTACT</a></li>
         </ul>
@@ -87,7 +88,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
       <h2 class="front_text">about me<span class="back_text">about me</span></h2>
       <div class="profile flex around">
         <div class="profile_image">
-          <img src="/myportfolio/images/Portfolio.jpg" class="my_image">
+          <img class="my_image" src="/myportfolio/images/Portfolio.jpg">
           <h2 class="profile_name">Takuto Arima</h2>
         </div>
         <div class="profile_text">
@@ -135,6 +136,25 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
           <i class="fab fa-js fa-9x"></i>
         </li>
       </ul>
+    </div>
+  </section>
+  <!-- 事業計画案 -->
+  <section class="project" id="project">
+    <div class="wrapper">
+      <h2 class="front_text">PROJECT<span class="back_text">PROJECT</span></h2>
+      <p class="project_info">事業計画案をご紹介します</p>
+      <div class="project_contents flex around">
+        <div class="project_image">
+          <a href="">
+          <img src="/myportfolio/images/表紙.jpg">
+          </a>
+        </div>
+        <div class="project_text">
+            <p>1988年07月21日生まれ/32歳</p>
+            <p>大阪府堺市出身</p>
+            <p>20歳を機に役者を目指して上京し、以後、芸能活動に従事しておりました。しかしながら、COVIT-19の影響により、引退を考えるに至りました。2020年６月から独学で学習を開始しました。学習ログは毎回gitにプッシュして記録するようにしております20歳を機に役者を目指して上京し、以後、芸能活動に従事しておりました。しかしながら、COVIT-19の影響により、引退を考えるに至りました。2020年６月から独学で学習を</p>
+        </div>
+      </div>
     </div>
   </section>
   <!-- 仕事 -->
@@ -185,29 +205,6 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
             <a href="https://tacbook.online">
               <img class="img_zoom inview" src="/myportfolio/images/WordPress.jpg"
               alt="WordPress" width="600" height="500">
-            </a>
-          </div>
-        </div>
-    </div>
-  </section>
-  <!-- 事業計画案 -->
-  <section class="project" id="project">
-    <div class="wrapper">
-      <h2 class="front_text">PROJECT<span class="back_text">PROJECT</span></h2>
-      <p class="work_info">事業計画案をご紹介します</p>
-      <div class="work_contents">
-        <div class="work_content flex space">
-          <div class="work_text">
-            <h3>
-              <i class="fas fa-feather-alt"></i>
-              事業計画案
-            </h3>
-            <p>不動産ポータルサイト</p>
-          </div>
-          <div class="work_img">
-            <a href="/myportfolio/images/架空サイト全体１.png">
-              <img class="img_zoom inview" src="/myportfolio/images/表紙.jpg"
-              alt="企画書" width="600px" height="500px">
             </a>
           </div>
         </div>

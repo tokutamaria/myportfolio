@@ -321,12 +321,14 @@ header h1 a:hover {
 }
 
 .left {
+	opacity: 1;
 	animation-name: kf_about_left;
 	animation-duration: .5s;
 	animation-fill-mode: forwards;
 }
 
 .right {
+	opacity: 1;
 	animation-name: kf_about_right;
 	animation-duration: .5s;
 	animation-fill-mode: forwards;
@@ -372,12 +374,51 @@ header h1 a:hover {
 	animation-duration: .8s;
 	animation-fill-mode: forwards;
 }
+
+/* 事業計画案 */
+.project {
+	width: 100%;
+	height: 100%;
+	padding-top: 6rem;
+}
+
+.project .project_info {
+	text-align: center;
+	margin: 6rem 0;
+}
+
+.project_contents {
+	width: 100%;
+	height: 100%;
+	padding: 1rem 1rem;
+}
+
+.project_text {
+	width: 50%;
+	height: 100%;
+	background: #ffffff;
+	box-shadow: 0 0 4px #13363E;
+	border-radius: 10px;
+	padding: 30px;
+}
+
+.project_image {
+	width: auto;
+	height: 100%;
+}
+
+.project_image img {
+	border-radius: 20px;
+	width: 400px;
+	height: 300px;
+}
+
 /* 仕事 */
 .work {
 	width: 100%;
 	height: auto;
 	position: relative;
-	padding-top: 4rem;
+	padding-top: 6rem;
 }
 
 .wrapper .work_contents {
@@ -440,42 +481,6 @@ header h1 a:hover {
 	transition: .3s;
 	cursor: pointer;
 	user-select: auto;
-}
-
-@keyframes kf_about_left {
-	0% {
-		transform: translateX(-600px);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-
-@keyframes kf_about_right {
-	0% {
-		transform: translateX(600px);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-
-@keyframes kf_nav_up {
-	0% {
-		transform: translateY(30px);
-	}
-	100% {
-		transform: translateY(4px);
-	}
-}
-
-@keyframes kf_img_up {
-	0% {
-		transform: translateY(300px);
-	}
-	100% {
-		transform: translateY(0);
-	}
 }
 
 /* お問い合わせ */
@@ -605,6 +610,43 @@ button:hover {
 
 .fa-chevron-circle-up:hover {
 	opacity: 1;
+}
+
+/* アニメーション */
+@keyframes kf_about_left {
+	0% {
+		transform: translateX(-600px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes kf_about_right {
+	0% {
+		transform: translateX(600px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes kf_nav_up {
+	0% {
+		transform: translateY(30px);
+	}
+	100% {
+		transform: translateY(4px);
+	}
+}
+
+@keyframes kf_img_up {
+	0% {
+		transform: translateY(300px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
 
 /*----------レスポンシブ----------*/
@@ -742,6 +784,26 @@ button:hover {
 }
 	.skills ul li {
 	width: 50%;
+}
+
+/* 事業企画案 */
+.project_contents {
+	display: block;
+}
+
+.project_image img {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.about .profile_name {
+	width: 100%;
+	margin-bottom: 4rem
+}
+
+.project_text {
+	width: 80%;
+	margin: 4rem auto;
 }
 
 /* 仕事 */

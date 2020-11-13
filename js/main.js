@@ -9,6 +9,8 @@
   const sp = 768;                                                 /* レスポンシブ画面幅 */
   const image = document.querySelector('.profile_image');         /* 自己紹介 写真 */
   const profile = document.querySelector('.profile_text');        /* 自己紹介 テキスト */
+  const pjImage = document.querySelector('.project_image');        /* 事業企画案 表紙 */
+  const pjText = document.querySelector('.project_text');          /* 事業企画案 説明 */
   const works = document.querySelectorAll(".work_content");       /* 仕事 */
   const contacts = document.querySelectorAll('#contact');         /* お問い合わせ */
   const skills = document.querySelector('.skill_list');           /* スキル */
@@ -76,6 +78,10 @@
   const ior = new IntersectionObserver(about_right);
   iol.observe(image);
   ior.observe(profile);
+
+  /* 事業企画案 */
+  iol.observe(pjImage);
+  ior.observe(pjText);
 
   /* スキル */
   const skill_li = function(entries) {
