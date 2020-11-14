@@ -322,16 +322,16 @@ header h1 a:hover {
 
 .left {
 	opacity: 1;
+	transition: opacity 3s;
 	animation-name: kf_about_left;
 	animation-duration: .5s;
-	animation-fill-mode: forwards;
 }
 
 .right {
 	opacity: 1;
+	transition: opacity 3s;
 	animation-name: kf_about_right;
 	animation-duration: .5s;
-	animation-fill-mode: forwards;
 }
 
 /* スキル */
@@ -402,15 +402,23 @@ header h1 a:hover {
 	padding: 30px;
 }
 
+.project_text p:nth-child(1) {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.project_text p:nth-child(2) {
+	text-align: center;
+	margin: 16px 0;
+}
+
 .project_image {
 	width: auto;
 	height: 100%;
 }
 
-.project_image img {
+.project_image iframe {
 	border-radius: 20px;
-	width: 400px;
-	height: 300px;
 }
 
 /* 仕事 */
@@ -615,19 +623,23 @@ button:hover {
 /* アニメーション */
 @keyframes kf_about_left {
 	0% {
+		opacity: 0;
 		transform: translateX(-600px);
 	}
 	100% {
+		opacity: .2;
 		transform: translateX(0);
 	}
 }
 
 @keyframes kf_about_right {
 	0% {
+		opacity: 0;
 		transform: translateX(600px);
 	}
 	100% {
 		transform: translateX(0);
+		opacity: .2;
 	}
 }
 
@@ -791,9 +803,10 @@ button:hover {
 	display: block;
 }
 
-.project_image img {
+iframe {
 	width: 80%;
 	margin: 0 auto;
+	display: block;
 }
 
 .about .profile_name {

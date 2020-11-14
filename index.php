@@ -142,17 +142,15 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
   <section class="project" id="project">
     <div class="wrapper">
       <h2 class="front_text">PROJECT<span class="back_text">PROJECT</span></h2>
-      <p class="project_info">事業計画案をご紹介します</p>
+      <p class="project_info">事業計画を提案します</p>
       <div class="project_contents flex around">
         <div class="project_image">
-          <a href="">
-          <img src="/myportfolio/images/表紙.jpg">
-          </a>
+          <iframe src="https://onedrive.live.com/embed?resid=D122383DB1577716%21209&amp;authkey=%21AF-5zLkLntPiPZg&amp;em=2&amp;wdAr=1.3333333333333333" width="350px" height="286px" frameborder="0">これは、<a target="_blank" href="https://office.com/webapps">Office</a> の機能を利用した、<a class="ppt" target="_blank" href="https://office.com">Microsoft Office</a> の埋め込み型のプレゼンテーションです。</iframe>
         </div>
         <div class="project_text">
-            <p>1988年07月21日生まれ/32歳</p>
-            <p>大阪府堺市出身</p>
-            <p>20歳を機に役者を目指して上京し、以後、芸能活動に従事しておりました。しかしながら、COVIT-19の影響により、引退を考えるに至りました。2020年６月から独学で学習を開始しました。学習ログは毎回gitにプッシュして記録するようにしております20歳を機に役者を目指して上京し、以後、芸能活動に従事しておりました。しかしながら、COVIT-19の影響により、引退を考えるに至りました。2020年６月から独学で学習を</p>
+            <p><i class="fas fa-home fa-1x"></i> アキタテ</p>
+            <p>高齢者の住まい探しをサポートするサービス</p>
+            <p>わたしは、不動産業に従事するなかで、年齢を理由に入居を断られる事案を数多く見てきました。だからこそ、高齢者を受け入れてくれる貴重な物件には、若い世代ではなく高齢者に住んでほしいと考えております。<br><br>これが、この事業計画書を作成した経緯です。</p>
         </div>
       </div>
     </div>
