@@ -257,6 +257,6 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
   <div id="page_top">
     <a href="#"><i class="fas fa-chevron-circle-up fa-3x"></i></a>
   </div>
-  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

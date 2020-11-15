@@ -903,4 +903,9 @@ iframe {
 	font-size: .8rem;
 	margin: 12px 0;
 }
+
+/* お問い合わせ */
+.contact p {
+	font-size: .8rem;
+}
 }

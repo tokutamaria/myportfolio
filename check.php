@@ -34,7 +34,7 @@ if(!empty($_POST)) {
   <section class="contact" id="contact">
   <div class="wrapper">
       <h2 class="front_text">CONFIRM<span class="back_text">CONFIRM</span></h2>
-      <p>メッセージを送る前に確認してね</p>
+      <p>ご確認ください</p>
       <form action="" method="post" autocomplete="off">
       <input type="hidden" name="action" value="submit">
         <!-- 名前 -->
