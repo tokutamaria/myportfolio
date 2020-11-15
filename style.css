@@ -403,13 +403,14 @@ header h1 a:hover {
 }
 
 .project_text p:nth-child(1) {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	text-align: center;
+	font-weight: bold;
 }
 
 .project_text p:nth-child(2) {
 	text-align: center;
-	margin: 16px 0;
+	margin: 12px 0;
 }
 
 .project_image {
@@ -540,7 +541,7 @@ header h1 a:hover {
 	outline: none;
 	border: solid 2px #333333;
 	border-radius: 30px;
-  padding: 10px 0;
+  padding: 4px 0;
   display: block;
   font-size: 1rem;
   width: 20%;
@@ -762,6 +763,9 @@ button:hover {
 
 /* キービジュアル */
 .kv_inner .kv_text {
+	text-align: center;
+	left: 0;
+	right: 0;
 	color: #ffffff;
 	}
 
@@ -835,12 +839,12 @@ iframe {
 
 /* お問い合わせ */
 .contact {
-	padding: 4rem;
+	padding: 4rem 0;
 }
 
 .contact input,
 .contact textarea {
-	width: 100%;
+	width: 80%;
 }
 
 .contact_btn {
@@ -874,5 +878,29 @@ iframe {
 
 .fa-chevron-circle-up:hover {
 	opacity: 1;
+}
+}
+
+@media (max-width: 375px) {
+/* 自己紹介 */
+.twitter,.mail,.github,
+.twitter::before,.mail::before,.github::before {
+	font-size: .8rem;
+}
+
+/* スキル */
+.skills .skill_img {
+	width: 6rem;
+	height: 6rem;
+}
+
+.skills ul li .fab {
+	font-size: 6rem;
+}
+
+/* 事業計画案 */
+.project_text p:nth-child(2) {
+	font-size: .8rem;
+	margin: 12px 0;
 }
 }

@@ -92,9 +92,9 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
           <h2 class="profile_name">Takuto Arima</h2>
         </div>
         <div class="profile_text">
-           <p>1988年07月21日生まれ/32歳</p>
-           <p>大阪府堺市出身</p>
-           <p>20歳を機に役者を目指して上京し、以後、芸能活動に従事しておりました。しかしながら、COVIT-19の影響により、引退を考えるに至りました。2020年６月から独学で学習を開始しました。学習ログは毎回gitにプッシュして記録するようにしております。</p>
+           <p>1988年07月21日生まれ</p>
+           <p>大阪府出身</p>
+           <p>学生時代は建築学を専攻し、設計士を志していました。<br>ですが、20歳の時に役者を夢見て上京。その後は舞台を中心にお芝居をしておりました。<br>現在は、役者業から離れ、不動産管理会社にて会計業務に従事しております。</p>
           <ul class="sns flex around">
             <li><a href="https://twitter.com/tackbook" class="twitter" target="_blank">Twitter</a></li>
             <li><a href="mailto:ta910arima@gmail.com" class="mail"
@@ -149,8 +149,8 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
         </div>
         <div class="project_text">
             <p><i class="fas fa-home fa-1x"></i> アキタテ</p>
-            <p>高齢者の住まい探しをサポートするサービス</p>
-            <p>わたしは、不動産業に従事するなかで、年齢を理由に入居を断られる事案を数多く見てきました。だからこそ、高齢者を受け入れてくれる貴重な物件には、若い世代ではなく高齢者に住んでほしいと考えております。<br><br>これが、この事業計画書を作成した経緯です。</p>
+            <p>高齢者の住まい探しをサポート</p>
+            <p>わたしは、不動産業に従事するなかで、年齢を理由に入居を断られる方を沢山みてきました。<br>ですので、高齢者を受け入れてくれる物件には、若い世代ではなく、高齢者に住んでほしいと考えております。<br><br>これが、この事業計画案を作成した経緯です。</p>
         </div>
       </div>
     </div>

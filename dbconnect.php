@@ -1,9 +1,8 @@
 <?php
-$host = 'localhost';
-$port= '3306';
-$dbname = 'portfolio';
-$user = 'root';
-$pass = 'root';
+$host = 'mysql10086.xserver.jp';
+$dbname = 'ta19880721_portfolio';
+$user = 'ta19880721_ta910';
+$pass = 'takuto19880721';
 $dbh = "mysql:dbname=$dbname;host=$host;post=$post;charset=utf8";
 
 try {
