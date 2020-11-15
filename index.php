@@ -46,6 +46,8 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="preload" href="index.js" as="script">
+  <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -94,7 +96,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
         <div class="profile_text">
            <p>1988年07月21日生まれ</p>
            <p>大阪府出身</p>
-           <p>学生時代は建築学を専攻し、設計士を志していました。<br>ですが、20歳の時に役者を夢見て上京。その後は舞台を中心にお芝居をしておりました。<br>現在は、役者業から離れ、不動産管理会社にて会計業務に従事しております。</p>
+           <p>学生時代は建築学を専攻し、設計士を志していました。<br>ですが、20歳の時に受けた、とあるオーディションを契機に役者になりたいと思い上京。その後は舞台を中心に活動しておりました。<br>現在は、役者業から離れ、不動産管理会社で会計業務をしております。</p>
           <ul class="sns flex around">
             <li><a href="https://twitter.com/tackbook" class="twitter" target="_blank">Twitter</a></li>
             <li><a href="mailto:ta910arima@gmail.com" class="mail"
@@ -150,7 +152,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
         <div class="project_text">
             <p><i class="fas fa-home fa-1x"></i> アキタテ</p>
             <p>高齢者の住まい探しをサポート</p>
-            <p>わたしは、不動産業に従事するなかで、年齢を理由に入居を断られる方を沢山みてきました。<br>ですので、高齢者を受け入れてくれる物件には、若い世代ではなく、高齢者に住んでほしいと考えております。<br><br>これが、この事業計画案を作成した経緯です。</p>
+            <p>現在、年齢を理由に入居を断られる方が沢山います。<br>だからこそ、高齢者を受け入れてくれる物件には、若い世代ではなく、高齢者に住んでほしい。<br>わたしは、そのような想いを抱き、この事業計画案を作成しました。</p>
         </div>
       </div>
     </div>

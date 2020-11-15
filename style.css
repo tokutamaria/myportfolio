@@ -410,7 +410,7 @@ header h1 a:hover {
 
 .project_text p:nth-child(2) {
 	text-align: center;
-	margin: 12px 0;
+	margin: 16px 0;
 }
 
 .project_image {
@@ -807,15 +807,10 @@ button:hover {
 	display: block;
 }
 
-iframe {
+.project_image iframe {
 	width: 80%;
 	margin: 0 auto;
 	display: block;
-}
-
-.about .profile_name {
-	width: 100%;
-	margin-bottom: 4rem
 }
 
 .project_text {
@@ -883,8 +878,13 @@ iframe {
 
 @media (max-width: 375px) {
 /* 自己紹介 */
-.twitter,.mail,.github,
-.twitter::before,.mail::before,.github::before {
+.about .profile_text {
+	width: 100%;
+	padding: 30px;
+}
+
+.twitter,.mail,.github
+ {
 	font-size: .8rem;
 }
 
@@ -899,9 +899,21 @@ iframe {
 }
 
 /* 事業計画案 */
+.project_image iframe {
+	width: 350px;
+	height: 286px;
+}
+
+.project_text {
+	width:100%;
+}
 .project_text p:nth-child(2) {
 	font-size: .8rem;
-	margin: 12px 0;
+}
+
+/* 仕事 */
+.work {
+	width: 100%;
 }
 
 /* お問い合わせ */
